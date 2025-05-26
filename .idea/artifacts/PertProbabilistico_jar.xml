@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PertProbabilistico:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PertProbabilistico_jar</output-path>
+    <root id="archive" name="PertProbabilistico.jar">
+      <element id="module-output" name="PertProbabilistico" />
+    </root>
+  </artifact>
+</component>
