@@ -3,7 +3,6 @@ package com.escom.pertpb;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.HashMap;
 
 public class ActivitiesWindow extends JFrame {
 
@@ -104,18 +103,18 @@ public class ActivitiesWindow extends JFrame {
                 if (isValidInput(o, m, p, this)) {
 
                     int option = JOptionPane.YES_OPTION;
-                    if (project.getActivities().containsKey(key)) {
+                    if (project.activities().containsKey(key)) {
                         option = JOptionPane.showConfirmDialog(this, "La actividad ya existe. ¿Desea reemplazarla?", "Input Error", JOptionPane.YES_NO_OPTION);
                     }
 
                     if (option == JOptionPane.NO_OPTION) {
-                        resultLabel.setText("Tiempo esperado (Te): " + project.getActivities().get(key).getExpectedTime());
-                        varianceLabel.setText("Varianza: " + project.getActivities().get(key).getVariance());
+                        resultLabel.setText("Tiempo esperado (Te): " + project.activities().get(key).getExpectedTime());
+                        varianceLabel.setText("Varianza: " + project.activities().get(key).getVariance());
                         return;
                     }
 
                     Activity activity = new Activity(o, m, p);
-                    project.getActivities().put(activityField.getText().trim(), activity);
+                    project.activities().put(activityField.getText().trim(), activity);
 
                     resultLabel.setText("Tiempo esperado (Te): " + activity.getExpectedTime());
                     varianceLabel.setText("Varianza: " + activity.getVariance());

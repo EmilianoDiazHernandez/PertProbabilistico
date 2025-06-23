@@ -2,17 +2,7 @@ package com.escom.pertpb;
 
 import java.util.Map;
 
-public class Project {
-
-    private final Map<String, Activity> activities;
-
-    public Project(Map<String, Activity> activities) {
-        this.activities = activities;
-    }
-
-    public Map<String, Activity> getActivities() {
-        return activities;
-    }
+public record Project(Map<String, Activity> activities) {
 
     public double getTotalExpectedTime() {
         double total = 0.0;
